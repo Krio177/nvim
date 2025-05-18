@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd("WinEnter", {
     vim.wo.winhighlight = "Normal:Normal,NormalNC:DiffAdd"
   end,
 })
-
+vim.o.shell = "/bin/fish"
 vim.api.nvim_create_autocmd("WinLeave", {
   callback = function()
     vim.wo.winhighlight = "Normal:NormalNC,NormalNC:NormalNC"
