@@ -27,3 +27,5 @@ map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugge
 
 -- rustaceanvim
 map("n", "<Leader>dt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "Debugger testables" })
+vim.keymap.set('n', '<leader>d', '"_d', { noremap = true })
+vim.keymap.set('v', '<leader>d', '"_d', { noremap = true })
