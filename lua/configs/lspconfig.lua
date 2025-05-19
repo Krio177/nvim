@@ -5,7 +5,28 @@ require('lspconfig').phpactor.setup({
   filetypes = { "php" },
   root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
 })
-local servers = { "html", "cssls", "phpstan" }
-vim.lsp.enable(servers)
 
--- read :h vim.lsp.config for changing options of lsp servers 
+-- Szerverek listája és beállítása
+local servers = { 
+  "html", 
+  "cssls", 
+  -- "phpstan",  # PHPStan nem LSP szerver, érdemes eltávolítani
+  "gopls"      -- Go nyelvhez
+}
+
+-- Szerverek automatikus beállítása
+for _, lsp in ipairs(servers) do
+  require('lspconfig')[lsp].setup({})
+end
+
+-- Opcionális: gopls speciális beállítások
+require('lspconfig').gopls.setup({
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    }
+  }
+})
