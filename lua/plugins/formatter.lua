@@ -8,6 +8,7 @@ return {
           html = { "prettier" },
           lua = { "stylua" },
           javascript = { "prettier" },
+          php = { "pint", "php_cs_fixer", stop_after_first = true },
           go = { "goimports", "gofmt", stop_after_first = true },
           ["*"] = { "trim_whitespace" },
         },
