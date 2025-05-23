@@ -1,0 +1,22 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      highlight = { enable = true },
+      indent = { enable = true },
+      ensure_installed = {
+        "go", "lua", "vim", "bash", "json", "yaml", "markdown","php", "html", "css","python", "typescript", "javascript",
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          node_decremental = "<bs>",
+        },
+      },
+    })
+  end,
+}
