@@ -45,3 +45,7 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+vim.g.dbs = {
+  localhost = "mysql://root:root@localhost:3306/"
+}
+

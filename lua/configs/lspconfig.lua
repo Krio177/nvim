@@ -7,9 +7,10 @@ require('lspconfig').phpactor.setup({
 })
 
 -- Szerverek listája és beállítása
-local servers = { 
-  "html", 
-  "cssls", 
+local servers = {
+  "html",
+  "cssls",
+  "sqlls",    -- SQL Language Server
   -- "phpstan",  # PHPStan nem LSP szerver, érdemes eltávolítani
   "gopls"      -- Go nyelvhez
 }
@@ -30,3 +31,4 @@ require('lspconfig').gopls.setup({
     }
   }
 })
+require('lspconfig').sqlls.setup({})

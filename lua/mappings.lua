@@ -44,3 +44,11 @@ vim.keymap.set("v", "<leader>cc", "<cmd>CopilotChatVisual<cr>", { desc = "Open C
 vim.keymap.set("n", "<leader>ce", "<cmd>CopilotChatExplain<cr>", { desc = "Copilot explain code" })
 vim.keymap.set("n", "<leader>cr", "<cmd>CopilotChatFix<cr>", { desc = "Copilot fix code" })
 vim.keymap.set("n", "<leader>co", "<cmd>CopilotChatOptimize<cr>", { desc = "Copilot optimize code" })
+local harpoon = require("harpoon")
+
+-- REQUIRED
+harpoon:setup()
+vim.keymap.set("n", "<C-S-A>", function() harpoon:list():add() end, { desc = "Harpoon add file" })
+vim.keymap.set("n", "<C-S-E>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon quick menu" })
+vim.keymap.set("n", "<C-S-O>", function() harpoon:list():next() end, { desc = "Harpoon next" })
+vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end, { desc = "Harpoon previous" })
