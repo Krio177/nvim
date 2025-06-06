@@ -4,15 +4,15 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   opts = {
-    paths = { "~/Project/*" }, --custom path set by user
+    paths = { "~/Projects/*" }, --custom path set by user
     -- custom find command set by the user. Default should always work on unix unless user has heavily modified tools and/or PATH
     -- for Windows Users: installing `fd` is recommended with the equivalent `fd` command
     -- "fd . %s -td --min-depth %d --max-depth %d"
     command_pattern = "find %s -mindepth %d -maxdepth %d -type d -not -name '.git'",
-    newProjectPath = "~/Project/", --custom path for new projects
+    newProjectPath = "~/Projects/", --custom path for new projects
     file_explorer = function(dir) --custom file explorer set by user
-      vim.cmd("Neotree close")
-      vim.cmd("Neotree " .. dir)
+      -- vim.cmd("Neotree close")
+      -- vim.cmd("Neotree " .. dir)
     end,
     -- Or for oil.nvim:
     -- file_explorer = function(dir)
