@@ -39,7 +39,8 @@ statusline = {
 --          lazyload = false
 --      }
 --}
-
+vim.o.encoding = "utf-8"
+vim.scriptencoding = "utf-8"
 vim.opt.relativenumber = true
 require "custom.autocmds"
 return M

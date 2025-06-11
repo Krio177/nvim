@@ -27,7 +27,6 @@ map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugge
 
 -- rustaceanvim
 map("n", "<Leader>dt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "Debugger testables" })
-vim.keymap.set("n", "<leader>d", '"_d', { noremap = true })
 vim.keymap.set("v", "<leader>d", '"_d', { noremap = true })
 vim.keymap.set({ "n", "v" }, "mm", "<cmd>BookmarksMark<cr>", { desc = "Mark current line into active BookmarkList." })
 vim.keymap.set({ "n", "v" }, "mo", "<cmd>BookmarksGoto<cr>", { desc = "Go to bookmark at current active BookmarkList" })
@@ -50,5 +49,7 @@ local harpoon = require("harpoon")
 harpoon:setup()
 vim.keymap.set("n", "<C-S-A>", function() harpoon:list():add() end, { desc = "Harpoon add file" })
 vim.keymap.set("n", "<C-S-E>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon quick menu" })
-vim.keymap.set("n", "<C-S-O>", function() harpoon:list():next() end, { desc = "Harpoon next" })
-vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end, { desc = "Harpoon previous" })
+vim.keymap.set("n", "<C-o>", function() harpoon:list():next() end, { desc = "Harpoon next" })
+vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end, { desc = "Harpoon previous" })
+
+vim.keymap.set('n', '<leader>gD', '<cmd>Telescope lsp_references<CR>', bufopts)
